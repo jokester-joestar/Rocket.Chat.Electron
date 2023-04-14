@@ -7,57 +7,57 @@
 [![GitHub All Releases](https://img.shields.io/github/downloads/RocketChat/Rocket.Chat.Electron/total.svg)](https://github.com/RocketChat/Rocket.Chat.Electron/releases/latest)
 ![GitHub](https://img.shields.io/github/license/RocketChat/Rocket.Chat.Electron.svg)
 
-Desktop application for [Rocket.Chat][] available for macOS, Windows and Linux
-using [Electron][].
+可用于 macOS、Windows 和 Linux 的[Rocket.Chat][] 桌面应用程序
+使用 [Electron][]。
 
 ![Rocket.Chat Desktop App](https://user-images.githubusercontent.com/2263066/91490997-c0bd0c80-e889-11ea-92c7-2cbcc3aabc98.png)
 
 ---
 
-## Engage with us
+## 与我们互动
 
-### Share your story
-We’d love to hear about [your experience][] and potentially feature it on our
-[Blog][].
+### 分享你的故事
+我们很想听听[您的体验][]，可能会纳入我们的
+[博客][].
 
-### Subscribe for Updates
-Once a month our marketing team releases an email update with news about product
-releases, company related topics, events and use cases. [Sign Up!][]
+### 订阅更新
+我们的营销团队每月发布一次电子邮件更新，其中包含有关产品新闻的新闻
+发布、公司相关主题、事件和用例。[报名!][]
 
 ---
 
-## Download
+## 下载
 
-You can download the latest version from the [Releases][] page.
+你可以在[发布][] 页面获取到最新的版本。
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/rocketchat-desktop)
 
-## Install
+## 安装
 
-Launch the installer and follow the instructions to install.
+启动安装程序并按照说明进行安装。
 
-### Windows Options
+### Windows 选项
 
-On Windows you can run a silent install by adding the `/S` flag. You can also
-add the options below:
+在 Windows 上，您可以通过添加`/S`标志来运行静默安装。也可以
+添加以下选项：
 
-- `/S` - Silent install
-- `/allusers` - Install for all users (requires admin)
-- `/currentuser` - Install only the for current user (default)
-- `/disableAutoUpdates` - Disable automatic updates
+- `/S` - 静默安装
+- `/allusers` - 为所有用户安装（需要管理员）
+- `/currentuser` - 仅为当前用户安装 （默认）
+- `/disableAutoUpdates` - 禁用自动更新
 
-## Development
+## 开发相关
 
-### Quick start
+### 快速入门
 
-Prerequisites:
+前提准备:
 
 - [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Node.js](https://nodejs.org)
 - [node-gyp](https://github.com/nodejs/node-gyp#installation)
-- [Yarn](http://yarnpkg.com/) is recommended instead of npm.
+- [Yarn](http://yarnpkg.com/) 建议使用这个代替npm。
 
-Now just clone and start the app:
+现在只需克隆并启动应用程序：
 
 ```sh
 git clone https://github.com/RocketChat/Rocket.Chat.Electron.git
@@ -66,49 +66,48 @@ yarn
 yarn start
 ```
 
-### Structure of the project
+### 项目结构
 
-The source is located in the `src` folder. Everything in this folder will be
-built automatically when running the app with `yarn start`.
+源代码存放在`src`文件夹中。
+在使用`yarn start`运行应用程序后，这些内容会自动构建。
 
-The build process compiles all stuff from the `src` folder and puts it into the
-`app` folder, so after the build has finished, your `app` folder contains the
-full, runnable application.
+构建过程和编译的所需要的支持来自`src`文件夹及其包含的
+`app`文件夹，因此在构建完成后，您的`app`文件夹将包含
+完整、可运行的应用程序。
 
 ### TypeScript
 
-Following the [ongoing changes in Rocket.Chat codebase][], the app was
-rewritten in TypeScript 4 to address issues regarding maintainability.
+在 [Rocket.Chat核心代码一顿狂改][]之后，又使用 TypeScript 4 重写了一遍，用来解决可维护性的问题。
 
-### The build pipeline
+### 构建管线
 
-The build process is founded upon [rollup][] bundler. There are three entry files
-for your code:
+构建过程基于 [rollup][] 捆绑器。有三个入口文件
+对于您的代码：
 
-- `src/main.ts`, the script running at the main Electron process, orchestrating
-  the whole application;
+- `src/main.ts`，在Electron的主进程上运行的脚本，编排
+  整个应用程序;
 
-- `src/rootWindow.ts`, the script that renders the UI of the *root window*, the
-  app's main window;
+- `src/rootWindow.ts`，呈现 *root window* 的 UI 的脚本，
+  应用程序的主窗口;
 
-- and `src/preload.ts`, which runs in a privileged mode to connect the app and
-  the webviews rendering Rocket.Chat's web client.
+- 和`src/preload.ts`，它以特权模式运行以连接应用程序和
+  呈现 Rocket.Chat 的网络客户端的网络视图。
 
-#### Adding Node.js modules
+#### 添加 Node.js 模块
 
-Remember to respect the split between `dependencies` and `devDependencies` in
-`package.json` file. Only modules listed in `dependencies` will be included into
-distributable app.
+请遵守在`package.json`文件中
+对`dependencies`和`devDependencies`之间的拆分。
+只有`dependencies`中列出的模块才会包含在可分配的应用中。
 
-### Troubleshooting
+### 故障排除
 
 #### node-gyp
 
-Follow the installation instruction on [node-gyp readme][].
+按照上面的安装说明进行操作 [node-gyp readme][].
 
 #### Ubuntu
 
-You will need to install the following packages:
+您可能需要安装以下软件包：
 
 ```sh
 build-essential
@@ -118,7 +117,7 @@ libxss-dev
 
 #### Fedora
 
-You will need to install the following packages:
+您可能需要安装以下软件包：
 
 ```sh
 libX11
@@ -128,42 +127,42 @@ gcc-c++
 
 #### Windows 7
 
-On Windows 7 you may have to follow option 2 of the [node-gyp install guide]
-and install Visual Studio.
+在 Windows 7 上，您可能需要遵循 [node-gyp install guide][] 的选项 2
+并安装 Visual Studio。
 
-### Testing
+### 测试
 
-#### Unit tests
+#### 单元测试
 
 ```sh
 yarn test
 ```
 
-We use [Jest][] testing framework with the [Jest electron runner][]. It searches
-for all files in `src` directory that match the glob pattern
+我们使用[Jest][]测试框架和[Jest electron runner][]。它搜索
+对于`src`目录中与 glob 模式匹配的所有文件
 `*.(spec|test).{js,ts,tsx}`.
 
-### Making a release
+### 打包发布
 
-To package your app into an installer use command:
+要将应用打包到安装程序中，请使用以下命令：
 
 ```sh
 yarn release
 ```
 
-It will start the packaging process for operating system you are running this
-command on. Ready for distribution file will be outputted to `dist` directory.
+它将启动您正在运行的操作系统的打包过程
+命令打开。准备分发文件将被输出到`dist`目录。
 
-All packaging actions are handled by [electron-builder][]. It has a lot of
-[customization options][].
+所有打包操作都由 [electron-builder][] 处理。它有很多
+[自定义选项][].
 
-## Default servers
+## 默认服务器
 
-The `servers.json` file will define what servers the client will connect to and
-will populate the server list in the sidebar. It contains a list of default
-servers which will be added the first time the user runs the app (or when all
-servers are removed from the list).
-The file syntax is as follows:
+客户端连接到哪个服务器由`servers.json`文件决定，并且在侧边栏中显示服务器列表。
+
+它包含一个默认列表
+将在用户首次运行应用时添加的服务器（或当所有服务器将从列表中删除）。
+文件语法如下：
 
 ```json
 {
@@ -172,96 +171,86 @@ The file syntax is as follows:
 }
 ```
 
-### Pre-Release Configuration
+### 预发布配置
 
-You can bundle a `servers.json` with the install package, the file should be
-located in the root of the project application (same level as the
-`package.json`). If the file is found, the initial "Connect to server" screen
-will be skipped and it will attempt to connect to the first server in the array
-that has been defined and drop the user right at the login screen. Note that the
-`servers.json` will only be checked if no other servers have already been added,
-even if you uninstall the app without removing older preferences, it will not be
-triggered again.
+您可以将`servers.json`与安装包捆绑在一起，该文件应位于项目应用程序的根目录中（与`package.json`级别相同）。
+ 如果找到该文件，将跳过初始的“连接到服务器”屏幕，它将尝试连接到已定义的阵列中的第一台服务器，并将用户直接放在登录屏幕上。
+请注意，只有在尚未添加其他服务器的情况下，才会检查`servers.json`，
+当你卸载了应用程序但没有删除旧的首选项时，`servers.json`不会被触发。
 
-### Post-Install Configuration
+### 安装后配置
 
-If you can't (or don't want to) bundle the file inside the app, you can create a
-`servers.json` in the user preferences folder which will overwrite the packaged
-one. The file should be located in the `%APPDATA%/Rocket.Chat/` folder or the
-installation folder in case of an installation for all users (Windows only).
+如果您不能（或不想）将文件捆绑在应用程序中，则可以在用户首选项文件夹中创建一个`servers.json`，该文件夹将覆盖打包的文件。该文件应位于`%APPDATA%/Rocket.Chat/`文件夹中，或者在为所有用户安装的情况下安装文件夹（仅限Windows）。
 
-For Windows, the full paths are:
+对于 Windows，完整路径为：
 
 - `~\Users\<username>\AppData\Roaming\Rocket.Chat\`
 - `~\Program Files\Rocket.Chat\Resources\`
 
-On macOS, the full path is:
+对于 macOS，完整路径为：
 
 - `~/Users/<username>/Library/Application Support/Rocket.Chat/`
 - `/Library/Preferences/Rocket.Chat/`
 
-On Linux, the full paths are:
+对于 Linux，完整路径为：
 
 - `/home/<username>/.config/Rocket.Chat/`
 - `/opt/Rocket.Chat/resources/`
 
-### Overridden settings
+### 被覆盖的设置
 
-You can override the user settings by creating an `overridden-settings.json` in
-the user preferences folder.
-The file should be located in the `%APPDATA%/Rocket.Chat/` folder or the
-installation folder in case of an installation for all users (Windows only).
+您可以通过在用户首选项文件夹中创建`overridden-settings.json`来覆盖用户设置。
+该文件应位于`%APPDATA%/Rocket.Chat/`文件夹中，或者在为所有用户安装的情况下安装文件夹（仅限Windows）。
 
-Every setting set on the file will override the default and user settings. Then
-you can use it for disabling the default features like auto-update and even create
-a single server mode.
+在文件上设置的每个设置都将覆盖默认设置和用户设置。然后，您可以使用它来禁用自动更新等默认功能，甚至可以创建单个服务器模式。
 
-#### The settings that can be overridden are:
+#### 可以覆盖的设置包括：
 
-| Setting      | Description |
+| 设置    | 描述 |
 | ----------- | ----------- |
-| `"isReportEnabled": true,`                   | Sets if the bugs will be reported to developers.
-| `"isInternalVideoChatWindowEnabled": true,`  | Sets the video calls will be opened in an internal window.
-| `"isFlashFrameEnabled": true,`               | Sets if the flash frame will be enabled.
-| `"isMinimizeOnCloseEnabled": false,`         | Sets if the app will be minimized on close.
-|`"doCheckForUpdatesOnStartup": true,`         | Sets if the app will check for updates on startup.
-| `"isMenuBarEnabled": true,`                  | Sets if the menu bar will be enabled.
-|`"isTrayIconEnabled": true,`                  | Enables Tray Icon, the app will be hidden to the tray on close. Overrides `"isMinimizeOnCloseEnabled"`
-|`"isUpdatingEnabled": true,`                  | Sets if the app can be updated by the user.
-|`"isAddNewServersEnabled": true,`              | Sets if the user can add new servers.
+| `"isReportEnabled": true,`                   | 设置是否将错误报告给开发人员。 |
+| `"isInternalVideoChatWindowEnabled": true,`  | 设置视频通话在内部窗口中打开。 |
+| `"isFlashFrameEnabled": true,`               | 设置是否启用闪光帧。 |
+| `"isMinimizeOnCloseEnabled": false,`         | 设置应用是否在关闭时最小化。 |
+|`"doCheckForUpdatesOnStartup": true,`         | 设置应用是否将在启动时检查更新。 |
+| `"isMenuBarEnabled": true,`                  | 设置是否启用菜单栏。 |
+|`"isTrayIconEnabled": true,`                  | 启用托盘图标，应用程序将在关闭时隐藏到托盘中。覆盖 `"isMinimizeOnCloseEnabled"` |
+|`"isUpdatingEnabled": true,`                  | 设置用户是否可以更新应用。 |
+|`"isAddNewServersEnabled": true,`              | 设置用户是否可以添加新服务器。 |
 
-##### Single server mode
-If the setting `"isAddNewServersEnabled": false` is set, the user will not be able to add new servers.
-The buttons and shortcuts will be disabled. Then you will have to add the server to the `servers.json` file.
-With this, you can create a single server mode or just don't let the user to add new servers by his own.
+##### 单服务器模式
+如果设置了`"isAddNewServersEnabled": false`，则用户将无法添加新服务器。
+按钮和快捷方式将被禁用。然后，您必须将服务器添加到`servers.json`文件中。
+有了这个，您可以创建单个服务器模式，或者只是不让用户自己添加新服务器。
 
-##### Example configuration
-`overridden-settings.json` file:
+##### 配置示例
+`overridden-settings.json` 文件:
 
     {
-	   "isTrayIconEnabled": false,
-	   "isMinimizeOnCloseEnabled": false
+       "isTrayIconEnabled": false,
+       "isMinimizeOnCloseEnabled": false
     }
-When `isTrayIconEnabled` is enabled, the app will be hidden on close.
-When `isMinimizeOnCloseEnabled` is enabled, the app will be minimized on close.
-When both are disabled, the app will quit on close.
-## License
+启用`isTrayIconEnabled`时，该应用程序将在关闭时隐藏。
+启用`isMinimizeOnCloseEnabled`时，应用程序将在关闭时最小化。
+当两者都被禁用时，应用程序将在关闭时退出。
 
-Released under the MIT license.
+## 许可证
+
+在 MIT 许可下发布。
 
 [Rocket.Chat]: https://rocket.chat
 
 [Electron]: https://electronjs.org/
 
-[your experience]: https://survey.zohopublic.com/zs/e4BUFG
+[您的体验]: https://survey.zohopublic.com/zs/e4BUFG
 
-[Blog]: https://rocket.chat/case-studies/?utm_source=github&utm_medium=readme&utm_campaign=community
+[博客]: https://rocket.chat/case-studies/?utm_source=github&utm_medium=readme&utm_campaign=community
 
-[Sign Up!]: https://rocket.chat/newsletter/?utm_source=github&utm_medium=readme&utm_campaign=community
+[报名!]: https://rocket.chat/newsletter/?utm_source=github&utm_medium=readme&utm_campaign=community
 
-[Releases]: https://github.com/RocketChat/Rocket.Chat.Electron/releases/latest
+[发布]: https://github.com/RocketChat/Rocket.Chat.Electron/releases/latest
 
-[ongoing changes in Rocket.Chat codebase]: https://forums.rocket.chat/t/moving-away-from-meteor-and-beyond/3270
+[Rocket.Chat核心代码一顿狂改]: https://forums.rocket.chat/t/moving-away-from-meteor-and-beyond/3270
 
 [rollup]: https://github.com/rollup/rollup
 
@@ -273,6 +262,6 @@ Released under the MIT license.
 
 [electron-builder]: https://github.com/electron-userland/electron-builder
 
-[customization options]: https://github.com/electron-userland/electron-builder/wiki/Options
+[自定义选项]: https://github.com/electron-userland/electron-builder/wiki/Options
 
 [node-gyp install guide]: https://github.com/nodejs/node-gyp#installation
